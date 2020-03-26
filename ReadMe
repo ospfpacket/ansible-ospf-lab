@@ -1,0 +1,4 @@
+File locations:
+/etc/ansible/hosts
+/etc/ansible/group_vars/all
+~/Documents/ansible/lab_deployment.yml
