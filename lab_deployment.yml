@@ -1,17 +1,175 @@
 ---
 
 - name: Set Login Banner for All Network Devices
-connection: network_cli
-gather_facts: false
-hosts: all
-become: yes
-become_method: enable
-tasks:
+  connection: network_cli
+  gather_facts: false
+  hosts: all
+  tasks:
 
-  - name: configure the login banner
-    ios_banner:
-      banner: login
-      text: |
-        Welcome to the OSPFPacket Lab!
-        Happy Learning!
-      state: present
+    - name: configure the login banner
+      ios_banner:
+        banner: login
+        text: |
+          Welcome to the OSPFPacket Lab!
+          Happy Learning!
+        state: present
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.21
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 1.1.1.1/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.22
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 2.2.2.2/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.23
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 3.3.3.3/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.24
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 4.4.4.4/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.25
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 5.5.5.5/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.26
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 6.6.6.6/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.27
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 7.7.7.7/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.28
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 8.8.8.8/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.29
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 9.9.9.9/24
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.30
+  tasks:
+
+    - name: config loopback interface description
+      ios_interface:
+          name: Loopback0
+          description: 'Loopback0 Interface Created by Anisble'
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 10.10.10.10/24
