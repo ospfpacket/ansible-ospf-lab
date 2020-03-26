@@ -14,16 +14,16 @@
           Happy Learning!
         state: present
 
+    - name: config loopback interface description
+      ios_interface:
+        name: Loopback0
+        description: 'Loopback0 Interface Created by Anisble'
+
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
   hosts: 10.0.0.21
   tasks:
-
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
 
     - name: config loopback interface ip address
       ios_l3_interface:
@@ -36,11 +36,6 @@
   hosts: 10.0.0.22
   tasks:
 
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
-
     - name: config loopback interface ip address
       ios_l3_interface:
           name: Loopback0
@@ -51,11 +46,6 @@
   gather_facts: false
   hosts: 10.0.0.23
   tasks:
-
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
 
     - name: config loopback interface ip address
       ios_l3_interface:
@@ -68,11 +58,6 @@
   hosts: 10.0.0.24
   tasks:
 
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
-
     - name: config loopback interface ip address
       ios_l3_interface:
           name: Loopback0
@@ -83,11 +68,6 @@
   gather_facts: false
   hosts: 10.0.0.25
   tasks:
-
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
 
     - name: config loopback interface ip address
       ios_l3_interface:
@@ -100,11 +80,6 @@
   hosts: 10.0.0.26
   tasks:
 
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
-
     - name: config loopback interface ip address
       ios_l3_interface:
           name: Loopback0
@@ -115,11 +90,6 @@
   gather_facts: false
   hosts: 10.0.0.27
   tasks:
-
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
 
     - name: config loopback interface ip address
       ios_l3_interface:
@@ -132,11 +102,6 @@
   hosts: 10.0.0.28
   tasks:
 
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
-
     - name: config loopback interface ip address
       ios_l3_interface:
           name: Loopback0
@@ -148,11 +113,6 @@
   hosts: 10.0.0.29
   tasks:
 
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
-
     - name: config loopback interface ip address
       ios_l3_interface:
           name: Loopback0
@@ -163,11 +123,6 @@
   gather_facts: false
   hosts: 10.0.0.30
   tasks:
-
-    - name: config loopback interface description
-      ios_interface:
-          name: Loopback0
-          description: 'Loopback0 Interface Created by Anisble'
 
     - name: config loopback interface ip address
       ios_l3_interface:
