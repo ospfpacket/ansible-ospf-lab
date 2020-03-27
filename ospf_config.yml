@@ -180,16 +180,29 @@
           - redistribute static subnets
         parents: router ospf 1
 
-    - name: configure int/seg 7,79,37,67 for ospf area 2 on R7
+    - name: configure int/seg 7 for ospf area 2 on R6
       ios_config:
         lines:
           - ip ospf 1 area 2
-        parents: "{ item }"
-      with_items:
-        - interface Ethernet0/0.7
-        - interface Ethernet0/0.79
-        - interface Ethernet0/0.67
-        - interface Ethernet0/0.37
+        parents: interface Ethernet0/0.7
+
+    - name: configure int/seg 67 for ospf area 2 on R7
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: interface Ethernet0/0.67
+
+    - name: configure int/seg 37 for ospf area 2 on R7
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: interface Ethernet0/0.37
+
+    - name: configure int/seg 79 for ospf area 2 on R7
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: interface Ethernet0/0.79
 
 - name: OSPF Config for R8
   connection: network_cli
@@ -204,15 +217,23 @@
           - redistribute static subnets
         parents: router ospf 1
 
-    - name: configure int/seg 8,58,108 for ospf area 3 on R8
+    - name: configure int/seg 8 for ospf area 3 on R8
       ios_config:
         lines:
           - ip ospf 1 area 3
-        parents: "{ item }"
-      with_items:
-        - interface Ethernet0/0.8
-        - interface Ethernet0/0.58
-        - interface Ethernet0/0.108
+        parents: interface Ethernet0/0.8
+
+    - name: configure int/seg 58 for ospf area 3 on R8
+      ios_config:
+        lines:
+          - ip ospf 1 area 3
+        parents: interface Ethernet0/0.58
+
+    - name: configure int/seg 108 for ospf area 3 on R8
+      ios_config:
+        lines:
+          - ip ospf 1 area 3
+        parents: interface Ethernet0/0.108
 
 - name: OSPF Config for R9
   connection: network_cli
@@ -227,14 +248,17 @@
           - redistribute static subnets
         parents: router ospf 1
 
-    - name: configure int/seg 9,79 for ospf area 2 on R9
+    - name: configure int/seg 9 for ospf area 2 on R9
       ios_config:
         lines:
           - ip ospf 1 area 2
-        parents: "{ item }"
-      with_items:
-        - interface Ethernet0/0.9
-        - interface Ethernet0/0.79
+        parents: interface Ethernet0/0.9
+
+    - name: configure int/seg 79 for ospf area 2 on R9
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: interface Ethernet0/0.79
 
 - name: OSPF Config for R10
   connection: network_cli
@@ -249,11 +273,14 @@
           - redistribute static subnets
         parents: router ospf 1
 
-    - name: configure int/seg 10,108 for ospf area 3 on R10
+    - name: configure int/seg 10 for ospf area 3 on R10
       ios_config:
         lines:
           - ip ospf 1 area 3
-        parents: "{ item }"
-      with_items:
-        - interface Ethernet0/0.10
-        - interface Ethernet0/0.108
+        parents: interface Ethernet0/0.10
+
+    - name: configure int/seg 108 for ospf area 3 on R10
+      ios_config:
+        lines:
+          - ip ospf 1 area 3
+        parents: interface Ethernet0/0.108
