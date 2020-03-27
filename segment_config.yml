@@ -44,6 +44,7 @@
           -  tunnel key 150
           -  tunnel protection ipsec profile DMVPN_PROFILE
           -  no shutdown
+          -  ip ospf network point-to-multipoint
         parents: interface Tunnel0
 
 - name: Configuration of R2 Interfaces and Segments
@@ -56,7 +57,7 @@
       ios_config:
         lines:
           - encapsulation dot1q 100
-          - ip address 155.1.100.2 255.255.255.0
+          - ip address 169.254.100.2 255.255.255.0
         parents: interface ethernet0/0.100
 
     - name: config int/seg 23 on R2
@@ -83,6 +84,7 @@
           -  tunnel key 150
           -  tunnel protection ipsec profile DMVPN_PROFILE
           -  no shutdown
+          -  ip ospf network point-to-multipoint
         parents: interface Tunnel0
 
 - name: Configuration of R3 Interfaces and Segments
@@ -136,6 +138,7 @@
           -  tunnel key 150
           -  tunnel protection ipsec profile DMVPN_PROFILE
           -  no shutdown
+          -  ip ospf network point-to-multipoint
         parents: interface Tunnel0
 
 - name: Configuration of R4 Interfaces and Segments
@@ -182,6 +185,7 @@
           -  tunnel key 150
           -  tunnel protection ipsec profile DMVPN_PROFILE
           -  no shutdown
+          -  ip ospf network point-to-multipoint
         parents: interface Tunnel0
 
 
@@ -234,6 +238,7 @@
           -  tunnel key 150
           -  tunnel protection ipsec profile DMVPN_PROFILE
           -  no shutdown
+          -  ip ospf network point-to-multipoint
         parents: interface Tunnel0
 
 - name: Configuration of R6 Interfaces and Segments
