@@ -314,7 +314,7 @@
       ios_config:
         lines:
           - encapsulation dot1q 108
-          - ip address 169.254.108.8 255.255.255.0
+          - ip address 155.1.108.8 255.255.255.0
         parents: interface ethernet0/0.108
 
 - name: Configuration of R9 Interfaces and Segments
