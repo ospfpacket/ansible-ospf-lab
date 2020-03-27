@@ -1,0 +1,91 @@
+---
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment9
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment79
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment7
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment67
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment37
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment13
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment23
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment100
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment146
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment45
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment5
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment58
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment8
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment108
+  tasks:
+
+- name: Configuration of Segments for Lab
+  connection: network_cli
+  gather_facts: false
+  hosts: segment10
+  tasks:

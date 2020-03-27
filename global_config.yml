@@ -1,0 +1,26 @@
+---
+
+- name: Set Login Banner for All Network Devices
+  connection: network_cli
+  gather_facts: false
+  hosts: lab
+  tasks:
+
+    - name: configure the login banner
+      ios_banner:
+        banner: login
+        text: |
+          Welcome to the OSPFPacket Lab!
+          Happy Learning!
+        state: present
+
+    - name: config loopback interface description
+      ios_interface:
+        name: Loopback0
+        description: 'Loopback0 Interface Created by Anisble'
+
+    - name: configure loopback for ospf
+      ios_config:
+        lines:
+          - ip ospf 1 area 0.0.0.0
+        parents: interface Loopback0

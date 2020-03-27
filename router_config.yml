@@ -1,0 +1,171 @@
+---
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.21
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 1.1.1.1/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 1.1.1.1
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.22
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 2.2.2.2/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 2.2.2.2
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.23
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 3.3.3.3/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 3.3.3.3
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.24
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 4.4.4.4/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 4.4.4.4
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.25
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 5.5.5.5/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 5.5.5.5
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.26
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 6.6.6.6/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 6.6.6.6
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.27
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 7.7.7.7/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 7.7.7.7
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.28
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 8.8.8.8/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 8.8.8.8
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.29
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 9.9.9.9/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 9.9.9.9
+        parents: router ospf 1
+
+- name: Configure Loopback0
+  connection: network_cli
+  gather_facts: false
+  hosts: 10.0.0.30
+  tasks:
+
+    - name: config loopback interface ip address
+      ios_l3_interface:
+          name: Loopback0
+          ipv4: 10.10.10.10/24
+
+    - name: configure router-id for ospf
+      ios_config:
+        lines:
+          - router-id 10.10.10.10
+        parents: router ospf 1

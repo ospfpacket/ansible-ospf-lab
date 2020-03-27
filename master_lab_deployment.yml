@@ -1,0 +1,5 @@
+
+---
+
+- import_playbook: global_config.yml
+- import_playbook: router_config.yml
