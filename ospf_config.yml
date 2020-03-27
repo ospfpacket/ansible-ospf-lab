@@ -180,7 +180,7 @@
           - redistribute static subnets
         parents: router ospf 1
 
-    - name: configure int/seg 7 for ospf area 2 on R6
+    - name: configure int/seg 7 for ospf area 2 on R7
       ios_config:
         lines:
           - ip ospf 1 area 2
