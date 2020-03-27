@@ -5,6 +5,8 @@ Automate the deployment of a 10 router lab with 5 OSPF areas and satic/connected
 
 ## Quick Links
 
+- Platforms Used in the Lab(https://github.com/ospfpacket/ansible-ospf-lab#platforms-used-in-the-lab)
+
 ## Platforms Used in the Lab
 
 This lab was run against the following IOL image:
