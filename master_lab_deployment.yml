@@ -4,3 +4,4 @@
 - import_playbook: global_config.yml
 - import_playbook: router_config.yml
 - import_playbook: segment_config.yml
+- import_playbook: ospf_config.yml
