@@ -1,8 +1,0 @@
-This script assumes that you have a 10 router lab, reachable at 10.0.0.21-30.
-***Please edit the hosts file to reflect what your lab devices are if that subnet isn't usable to your environment.
-***Please edit the username and password variables to reflect your environment. The IOL seems to have a bug with ansible_vault. You should only use plaintext passwords in a testing environment.
-
-File locations:
-/etc/ansible/hosts
-/etc/ansible/group_vars/all
-~/Documents/ansible/
