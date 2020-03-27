@@ -35,3 +35,6 @@ all:
         R10:
           hosts:
             10.0.0.30:
+        tunnelrouters:
+          hosts:
+            10.0.0.[21:25]:

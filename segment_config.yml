@@ -27,6 +27,25 @@
           - ip address 169.254.100.1 255.255.255.0
         parents: interface ethernet0/0.100
 
+    - name: tunnel interface config on R1
+      ios_config:
+        lines:
+          -  ip address 155.1.0.1 255.255.255.0
+          -  ip mtu 1400
+          -  ip nhrp authentication NHRPPASS
+          -  ip nhrp map 155.1.0.5 169.254.100.5
+          -  ip nhrp map multicast 169.254.100.5
+          -  ip nhrp network-id 1
+          -  ip nhrp holdtime 300
+          -  ip nhrp nhs 155.1.0.5
+          -  ip tcp adjust-mss 1360
+          -  tunnel source Ethernet0/0.100
+          -  tunnel mode gre multipoint
+          -  tunnel key 150
+          -  tunnel protection ipsec profile DMVPN_PROFILE
+          -  no shutdown
+        parents: interface Tunnel0
+
 - name: Configuration of R2 Interfaces and Segments
   connection: network_cli
   gather_facts: false
@@ -46,6 +65,25 @@
           - encapsulation dot1q 23
           - ip address 155.1.23.2 255.255.255.0
         parents: interface ethernet0/0.23
+
+    - name: tunnel interface config on R2
+      ios_config:
+        lines:
+          -  ip address 155.1.0.2 255.255.255.0
+          -  ip mtu 1400
+          -  ip nhrp authentication NHRPPASS
+          -  ip nhrp map 155.1.0.5 169.254.100.5
+          -  ip nhrp map multicast 169.254.100.5
+          -  ip nhrp network-id 1
+          -  ip nhrp holdtime 300
+          -  ip nhrp nhs 155.1.0.5
+          -  ip tcp adjust-mss 1360
+          -  tunnel source Ethernet0/0.100
+          -  tunnel mode gre multipoint
+          -  tunnel key 150
+          -  tunnel protection ipsec profile DMVPN_PROFILE
+          -  no shutdown
+        parents: interface Tunnel0
 
 - name: Configuration of R3 Interfaces and Segments
   connection: network_cli
@@ -81,6 +119,24 @@
           - ip address 155.1.23.3 255.255.255.0
         parents: interface ethernet0/0.23
 
+    - name: tunnel interface config on R3
+      ios_config:
+        lines:
+          -  ip address 155.1.0.3 255.255.255.0
+          -  ip mtu 1400
+          -  ip nhrp authentication NHRPPASS
+          -  ip nhrp map 155.1.0.5 169.254.100.5
+          -  ip nhrp map multicast 169.254.100.5
+          -  ip nhrp network-id 1
+          -  ip nhrp holdtime 300
+          -  ip nhrp nhs 155.1.0.5
+          -  ip tcp adjust-mss 1360
+          -  tunnel source Ethernet0/0.100
+          -  tunnel mode gre multipoint
+          -  tunnel key 150
+          -  tunnel protection ipsec profile DMVPN_PROFILE
+          -  no shutdown
+        parents: interface Tunnel0
 
 - name: Configuration of R4 Interfaces and Segments
   connection: network_cli
@@ -108,6 +164,26 @@
           - encapsulation dot1q 100
           - ip address 169.254.100.4 255.255.255.0
         parents: interface ethernet0/0.100
+
+    - name: tunnel interface config on R4
+      ios_config:
+        lines:
+          -  ip address 155.1.0.4 255.255.255.0
+          -  ip mtu 1400
+          -  ip nhrp authentication NHRPPASS
+          -  ip nhrp map 155.1.0.5 169.254.100.5
+          -  ip nhrp map multicast 169.254.100.5
+          -  ip nhrp network-id 1
+          -  ip nhrp holdtime 300
+          -  ip nhrp nhs 155.1.0.5
+          -  ip tcp adjust-mss 1360
+          -  tunnel source Ethernet0/0.100
+          -  tunnel mode gre multipoint
+          -  tunnel key 150
+          -  tunnel protection ipsec profile DMVPN_PROFILE
+          -  no shutdown
+        parents: interface Tunnel0
+
 
 - name: Configuration of R5 Interfaces and Segments
   connection: network_cli
@@ -142,6 +218,23 @@
           - encapsulation dot1q 45
           - ip address 155.1.45.5 255.255.255.0
         parents: interface ethernet0/0.45
+
+    - name: tunnel interface config on R5
+      ios_config:
+        lines:
+          -  ip address 155.1.0.5 255.255.255.0
+          -  ip mtu 1400
+          -  ip nhrp authentication NHRPPASS
+          -  ip nhrp map multicast dynamic
+          -  ip nhrp network-id 1
+          -  ip tcp adjust-mss 1360
+          -  delay 1000
+          -  tunnel source Ethernet0/0.100
+          -  tunnel mode gre multipoint
+          -  tunnel key 150
+          -  tunnel protection ipsec profile DMVPN_PROFILE
+          -  no shutdown
+        parents: interface Tunnel0
 
 - name: Configuration of R6 Interfaces and Segments
   connection: network_cli
@@ -263,4 +356,3 @@
           - encapsulation dot1q 10
           - ip address 155.1.10.10 255.255.255.0
         parents: interface ethernet0/0.10
-        

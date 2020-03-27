@@ -3,7 +3,7 @@
 - name: Set Login Banner for All Network Devices
   connection: network_cli
   gather_facts: false
-  hosts: router
+  hosts: routers
   tasks:
 
     - name: configure the login banner
@@ -19,8 +19,29 @@
         name: Loopback0
         description: 'Loopback0 Interface Created by Anisble'
 
-    - name: configure loopback for ospf
+- name: Set Login Banner for All Network Devices
+  connection: network_cli
+  gather_facts: false
+  hosts: tunnelrouters
+  tasks:
+
+    - name: config isakmp policy
       ios_config:
         lines:
-          - ip ospf 1 area 0.0.0.0
-        parents: interface Loopback0
+          - encr aes
+          - authentication pre-share
+          - group 5
+          - hash md5
+        parents: crypto isakmp policy 10
+
+    - name: config isakmp key & ipsec transform-set
+      ios_config:
+        lines:
+          - crypto isakmp key cisco address 0.0.0.0
+          - crypto ipsec transform-set ESP_AES_SHA esp-aes esp-sha-hmac
+
+    - name: config ipsec profile
+      ios_config:
+        lines:
+          - set transform-set ESP_AES_SHA
+        parents: crypto ipsec profile DMVPN_PROFILE

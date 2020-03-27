@@ -1,0 +1,259 @@
+---
+- name: OSPF Config for R1
+  connection: network_cli
+  gather_facts: false
+  hosts: tunnelrouters
+  tasks:
+
+    - name: configure tunnel0 for ospf area 0 on tunnelrouters
+      ios_config:
+        lines:
+          - ip ospf 1 area 0
+        parents: interface Tunnel0
+
+- name: OSPF Config for R1
+  connection: network_cli
+  gather_facts: false
+  hosts: R1
+  tasks:
+
+    - name: configure ospf router-id on R1
+      ios_config:
+        lines:
+          - router-id 1.1.1.1
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 146 for ospf area 1 on R1
+      ios_config:
+        lines:
+          - ip ospf 1 area 1
+        parents: interface Ethernet0/0.146
+
+    - name: configure int/seg 13 for ospf area 4 on R1
+      ios_config:
+        lines:
+          - ip ospf 1 area 4
+        parents: interface Ethernet0/0.13
+
+- name: OSPF Config for R2
+  connection: network_cli
+  gather_facts: false
+  hosts: R2
+  tasks:
+
+    - name: configure ospf router-id on R2
+      ios_config:
+        lines:
+          - router-id 2.2.2.2
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 23 for ospf area 5 on R2
+      ios_config:
+        lines:
+          - ip ospf 1 area 5
+        parents: interface Ethernet0/0.23
+
+- name: OSPF Config for R3
+  connection: network_cli
+  gather_facts: false
+  hosts: R3
+  tasks:
+
+    - name: configure ospf router-id on R3
+      ios_config:
+        lines:
+          - router-id 3.3.3.3
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 23 for ospf area 5 on R3
+      ios_config:
+        lines:
+          - ip ospf 1 area 5
+        parents: interface Ethernet0/0.23
+
+    - name: configure int/seg 13 for ospf area 4 on R3
+      ios_config:
+        lines:
+          - ip ospf 1 area 4
+        parents: interface Ethernet0/0.13
+
+    - name: configure int/seg 37 for ospf area 2 on R3
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: interface Ethernet0/0.37
+
+- name: OSPF Config for R4
+  connection: network_cli
+  gather_facts: false
+  hosts: R4
+  tasks:
+
+    - name: configure ospf router-id on R4
+      ios_config:
+        lines:
+          - router-id 4.4.4.4
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 146 for ospf area 1 on R4
+      ios_config:
+        lines:
+          - ip ospf 1 area 1
+        parents: interface Ethernet0/0.146
+
+    - name: configure int/seg 45 for ospf area 0 on R4
+      ios_config:
+        lines:
+          - ip ospf 1 area 0
+        parents: interface Ethernet0/0.45
+
+- name: OSPF Config for R5
+  connection: network_cli
+  gather_facts: false
+  hosts: R5
+  tasks:
+
+    - name: configure ospf router-id on R5
+      ios_config:
+        lines:
+          - router-id 5.5.5.5
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 5 for ospf area 3 on R5
+      ios_config:
+        lines:
+          - ip ospf 1 area 3
+        parents: interface Ethernet0/0.5
+
+    - name: configure int/seg 45 for ospf area 0 on R5
+      ios_config:
+        lines:
+          - ip ospf 1 area 0
+        parents: interface Ethernet0/0.45
+
+    - name: configure int/seg 58 for ospf area 3 on R5
+      ios_config:
+        lines:
+          - ip ospf 1 area 3
+        parents: interface Ethernet0/0.58
+
+- name: OSPF Config for R6
+  connection: network_cli
+  gather_facts: false
+  hosts: R6
+  tasks:
+
+    - name: configure ospf router-id on R6
+      ios_config:
+        lines:
+          - router-id 6.6.6.6
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 146 for ospf area 1 on R6
+      ios_config:
+        lines:
+          - ip ospf 1 area 1
+        parents: interface Ethernet0/0.146
+
+    - name: configure int/seg 67 for ospf area 2 on R6
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: interface Ethernet0/0.67
+
+- name: OSPF Config for R7
+  connection: network_cli
+  gather_facts: false
+  hosts: R7
+  tasks:
+
+    - name: configure ospf router-id on R7
+      ios_config:
+        lines:
+          - router-id 7.7.7.7
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 7,79,37,67 for ospf area 2 on R7
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: "{ item }"
+      with_items:
+        - interface Ethernet0/0.7
+        - interface Ethernet0/0.79
+        - interface Ethernet0/0.67
+        - interface Ethernet0/0.37
+
+- name: OSPF Config for R8
+  connection: network_cli
+  gather_facts: false
+  hosts: R8
+  tasks:
+
+    - name: configure ospf router-id on R8
+      ios_config:
+        lines:
+          - router-id 8.8.8.8
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 8,58,108 for ospf area 3 on R8
+      ios_config:
+        lines:
+          - ip ospf 1 area 3
+        parents: "{ item }"
+      with_items:
+        - interface Ethernet0/0.8
+        - interface Ethernet0/0.58
+        - interface Ethernet0/0.108
+
+- name: OSPF Config for R9
+  connection: network_cli
+  gather_facts: false
+  hosts: R9
+  tasks:
+
+    - name: configure ospf router-id on R9
+      ios_config:
+        lines:
+          - router-id 9.9.9.9
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 9,79 for ospf area 2 on R9
+      ios_config:
+        lines:
+          - ip ospf 1 area 2
+        parents: "{ item }"
+      with_items:
+        - interface Ethernet0/0.9
+        - interface Ethernet0/0.79
+
+- name: OSPF Config for R10
+  connection: network_cli
+  gather_facts: false
+  hosts: R10
+  tasks:
+
+    - name: configure ospf router-id on R10
+      ios_config:
+        lines:
+          - router-id 10.10.10.10
+          - redistribute static subnets
+        parents: router ospf 1
+
+    - name: configure int/seg 10,108 for ospf area 3 on R10
+      ios_config:
+        lines:
+          - ip ospf 1 area 3
+        parents: "{ item }"
+      with_items:
+        - interface Ethernet0/0.10
+        - interface Ethernet0/0.108
