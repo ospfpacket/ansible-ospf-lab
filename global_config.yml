@@ -11,7 +11,7 @@
         banner: login
         text: |
           Welcome to the OSPFPacket Lab!
-          Happy Learning!
+          Happy Learning!!
         state: present
 
     - name: config loopback interface description
