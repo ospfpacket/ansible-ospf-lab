@@ -48,6 +48,7 @@
         lines:
           - router-id 2.2.2.2
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 23 for ospf area 5 on R2
@@ -67,6 +68,7 @@
         lines:
           - router-id 3.3.3.3
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 23 for ospf area 5 on R3
@@ -98,6 +100,7 @@
         lines:
           - router-id 4.4.4.4
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 146 for ospf area 1 on R4
@@ -123,6 +126,7 @@
         lines:
           - router-id 5.5.5.5
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 5 for ospf area 3 on R5
@@ -154,6 +158,7 @@
         lines:
           - router-id 6.6.6.6
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 146 for ospf area 1 on R6
@@ -179,6 +184,7 @@
         lines:
           - router-id 7.7.7.7
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 7 for ospf area 2 on R7
@@ -216,6 +222,7 @@
         lines:
           - router-id 8.8.8.8
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 8 for ospf area 3 on R8
@@ -247,6 +254,7 @@
         lines:
           - router-id 9.9.9.9
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 9 for ospf area 2 on R9
@@ -272,6 +280,7 @@
         lines:
           - router-id 10.10.10.10
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 10 for ospf area 3 on R10
