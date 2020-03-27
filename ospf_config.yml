@@ -22,6 +22,7 @@
         lines:
           - router-id 1.1.1.1
           - redistribute static subnets
+          - redistribute connected
         parents: router ospf 1
 
     - name: configure int/seg 146 for ospf area 1 on R1

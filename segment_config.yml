@@ -117,7 +117,7 @@
     - name: config int/seg 23 on R3
       ios_config:
         lines:
-          - encapsulation dot1q 13
+          - encapsulation dot1q 23
           - ip address 155.1.23.3 255.255.255.0
         parents: interface ethernet0/0.23
 
