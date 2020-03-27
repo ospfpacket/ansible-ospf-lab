@@ -3,7 +3,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.21
+  hosts: R1
   tasks:
 
     - name: config loopback interface ip address
@@ -20,7 +20,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.22
+  hosts: R2
   tasks:
 
     - name: config loopback interface ip address
@@ -37,7 +37,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.23
+  hosts: R3
   tasks:
 
     - name: config loopback interface ip address
@@ -54,7 +54,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.24
+  hosts: R4
   tasks:
 
     - name: config loopback interface ip address
@@ -71,7 +71,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.25
+  hosts: R5
   tasks:
 
     - name: config loopback interface ip address
@@ -88,7 +88,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.26
+  hosts: R6
   tasks:
 
     - name: config loopback interface ip address
@@ -105,7 +105,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.27
+  hosts: R7
   tasks:
 
     - name: config loopback interface ip address
@@ -122,7 +122,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.28
+  hosts: R8
   tasks:
 
     - name: config loopback interface ip address
@@ -139,7 +139,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.29
+  hosts: R9
   tasks:
 
     - name: config loopback interface ip address
@@ -156,7 +156,7 @@
 - name: Configure Loopback0
   connection: network_cli
   gather_facts: false
-  hosts: 10.0.0.30
+  hosts: R10
   tasks:
 
     - name: config loopback interface ip address
