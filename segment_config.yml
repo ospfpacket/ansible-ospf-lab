@@ -346,7 +346,7 @@
     - name: config int/seg 108 on R10
       ios_config:
         lines:
-          - encapsulation dot1q 146
+          - encapsulation dot1q 108
           - ip address 155.1.108.10 255.255.255.0
         parents: interface ethernet0/0.108
 
