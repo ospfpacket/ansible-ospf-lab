@@ -1,91 +1,266 @@
 ---
 
-- name: Configuration of Segments for Lab
+- name: Configuration of R1 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment9
+  hosts: R1
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 146 on R1
+      ios_config:
+        lines:
+          - encapsulation dot1q 146
+          - ip address 155.1.146.1 255.255.255.0
+        parents: interface ethernet0/0.146
+
+    - name: config int/seg 13 on R1
+      ios_config:
+        lines:
+          - encapsulation dot1q 13
+          - ip address 155.1.13.1 255.255.255.0
+        parents: interface ethernet0/0.13
+
+    - name: config int/seg 100 on R1
+      ios_config:
+        lines:
+          - encapsulation dot1q 100
+          - ip address 169.254.100.1 255.255.255.0
+        parents: interface ethernet0/0.100
+
+- name: Configuration of R2 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment79
+  hosts: R2
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 100 on R2
+      ios_config:
+        lines:
+          - encapsulation dot1q 100
+          - ip address 155.1.100.2 255.255.255.0
+        parents: interface ethernet0/0.100
+
+    - name: config int/seg 23 on R2
+      ios_config:
+        lines:
+          - encapsulation dot1q 23
+          - ip address 155.1.23.2 255.255.255.0
+        parents: interface ethernet0/0.23
+
+- name: Configuration of R3 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment7
+  hosts: R3
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 37 on R3
+      ios_config:
+        lines:
+          - encapsulation dot1q 37
+          - ip address 155.1.37.3 255.255.255.0
+        parents: interface ethernet0/0.37
+
+    - name: config int/seg 13 on R3
+      ios_config:
+        lines:
+          - encapsulation dot1q 13
+          - ip address 155.1.13.3 255.255.255.0
+        parents: interface ethernet0/0.13
+
+    - name: config int/seg 100 on R3
+      ios_config:
+        lines:
+          - encapsulation dot1q 100
+          - ip address 169.254.100.3 255.255.255.0
+        parents: interface ethernet0/0.100
+
+    - name: config int/seg 23 on R3
+      ios_config:
+        lines:
+          - encapsulation dot1q 13
+          - ip address 155.1.23.3 255.255.255.0
+        parents: interface ethernet0/0.23
+
+
+- name: Configuration of R4 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment67
+  hosts: R4
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 146 on R4
+      ios_config:
+        lines:
+          - encapsulation dot1q 146
+          - ip address 155.1.146.4 255.255.255.0
+        parents: interface ethernet0/0.146
+
+    - name: config int/seg 45 on R4
+      ios_config:
+        lines:
+          - encapsulation dot1q 45
+          - ip address 155.1.45.4 255.255.255.0
+        parents: interface ethernet0/0.45
+
+    - name: config int/seg 100 on R4
+      ios_config:
+        lines:
+          - encapsulation dot1q 100
+          - ip address 169.254.100.4 255.255.255.0
+        parents: interface ethernet0/0.100
+
+- name: Configuration of R5 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment37
+  hosts: R5
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 5 on R5
+      ios_config:
+        lines:
+          - encapsulation dot1q 5
+          - ip address 155.1.5.5 255.255.255.0
+        parents: interface ethernet0/0.5
+
+    - name: config int/seg 58 on R5
+      ios_config:
+        lines:
+          - encapsulation dot1q 58
+          - ip address 155.1.58.5 255.255.255.0
+        parents: interface ethernet0/0.58
+
+    - name: config int/seg 100 on R5
+      ios_config:
+        lines:
+          - encapsulation dot1q 100
+          - ip address 169.254.100.5 255.255.255.0
+        parents: interface ethernet0/0.100
+
+    - name: config int/seg 45 on R5
+      ios_config:
+        lines:
+          - encapsulation dot1q 45
+          - ip address 155.1.45.5 255.255.255.0
+        parents: interface ethernet0/0.45
+
+- name: Configuration of R6 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment13
+  hosts: R6
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 146 on R6
+      ios_config:
+        lines:
+          - encapsulation dot1q 146
+          - ip address 155.1.146.6 255.255.255.0
+        parents: interface ethernet0/0.146
+
+    - name: config int/seg 67 on R6
+      ios_config:
+        lines:
+          - encapsulation dot1q 67
+          - ip address 155.1.67.6 255.255.255.0
+        parents: interface ethernet0/0.67
+
+- name: Configuration of R7 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment23
+  hosts: R7
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 67 on R7
+      ios_config:
+        lines:
+          - encapsulation dot1q 67
+          - ip address 155.1.67.7 255.255.255.0
+        parents: interface ethernet0/0.67
+
+    - name: config int/seg 37 on R7
+      ios_config:
+        lines:
+          - encapsulation dot1q 37
+          - ip address 155.1.37.7 255.255.255.0
+        parents: interface ethernet0/0.37
+
+    - name: config int/seg 7 on R7
+      ios_config:
+        lines:
+          - encapsulation dot1q 7
+          - ip address 155.1.7.7 255.255.255.0
+        parents: interface ethernet0/0.7
+
+    - name: config int/seg 79 on R7
+      ios_config:
+        lines:
+          - encapsulation dot1q 79
+          - ip address 155.1.79.7 255.255.255.0
+        parents: interface ethernet0/0.79
+
+- name: Configuration of R8 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment100
+  hosts: R8
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 58 on R8
+      ios_config:
+        lines:
+          - encapsulation dot1q 58
+          - ip address 155.1.58.8 255.255.255.0
+        parents: interface ethernet0/0.58
+
+    - name: config int/seg 8 on R8
+      ios_config:
+        lines:
+          - encapsulation dot1q 8
+          - ip address 155.1.8.8 255.255.255.0
+        parents: interface ethernet0/0.8
+
+    - name: config int/seg 108 on R8
+      ios_config:
+        lines:
+          - encapsulation dot1q 108
+          - ip address 169.254.108.8 255.255.255.0
+        parents: interface ethernet0/0.108
+
+- name: Configuration of R9 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment146
+  hosts: R9
   tasks:
 
-- name: Configuration of Segments for Lab
+    - name: config int/seg 79 on R9
+      ios_config:
+        lines:
+          - encapsulation dot1q 79
+          - ip address 155.1.79.9 255.255.255.0
+        parents: interface ethernet0/0.79
+
+    - name: config int/seg 9 on R9
+      ios_config:
+        lines:
+          - encapsulation dot1q 9
+          - ip address 155.1.9.0 255.255.255.0
+        parents: interface ethernet0/0.9
+
+- name: Configuration of R10 Interfaces and Segments
   connection: network_cli
   gather_facts: false
-  hosts: segment45
+  hosts: R10
   tasks:
 
-- name: Configuration of Segments for Lab
-  connection: network_cli
-  gather_facts: false
-  hosts: segment5
-  tasks:
+    - name: config int/seg 108 on R10
+      ios_config:
+        lines:
+          - encapsulation dot1q 146
+          - ip address 155.1.108.10 255.255.255.0
+        parents: interface ethernet0/0.108
 
-- name: Configuration of Segments for Lab
-  connection: network_cli
-  gather_facts: false
-  hosts: segment58
-  tasks:
-
-- name: Configuration of Segments for Lab
-  connection: network_cli
-  gather_facts: false
-  hosts: segment8
-  tasks:
-
-- name: Configuration of Segments for Lab
-  connection: network_cli
-  gather_facts: false
-  hosts: segment108
-  tasks:
-
-- name: Configuration of Segments for Lab
-  connection: network_cli
-  gather_facts: false
-  hosts: segment10
-  tasks:
+    - name: config int/seg 10 on R10
+      ios_config:
+        lines:
+          - encapsulation dot1q 10
+          - ip address 155.1.10.10 255.255.255.0
+        parents: interface ethernet0/0.10
+        
