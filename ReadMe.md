@@ -5,7 +5,7 @@ Automate the deployment of a 10 router lab with 5 OSPF areas and satic/connected
 
 ## Quick Links
 
-- [Supported Platforms](https://ktbyers.github.io/netmiko/#supported-platforms)
+- [Platforms Used in the Lab](https://ospfpacket.github.io/ansible-ospf-lab/#platforms-used-in-the-lab)
 - [Installation](https://ktbyers.github.io/netmiko/#installation)
 - [Tutorials/Examples/Getting Started](https://ktbyers.github.io/netmiko/#tutorialsexamplesgetting-started)
 - [Common Issues/FAQ](https://ktbyers.github.io/netmiko/#common-issuesfaq)
