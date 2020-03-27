@@ -3,7 +3,7 @@
 - name: Set Login Banner for All Network Devices
   connection: network_cli
   gather_facts: false
-  hosts: lab
+  hosts: router
   tasks:
 
     - name: configure the login banner
