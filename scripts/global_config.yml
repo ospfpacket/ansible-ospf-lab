@@ -1,6 +1,6 @@
 ---
 
-- name: Set Login Banner for All Network Devices
+- name: Set Login Banner and Loopback0 description for All Network Devices
   connection: network_cli
   gather_facts: false
   hosts: routers

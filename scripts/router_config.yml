@@ -1,6 +1,6 @@
 ---
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R1
   connection: network_cli
   gather_facts: false
   hosts: R1
@@ -17,7 +17,7 @@
           - router-id 1.1.1.1
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R2
   connection: network_cli
   gather_facts: false
   hosts: R2
@@ -34,7 +34,7 @@
           - router-id 2.2.2.2
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R3
   connection: network_cli
   gather_facts: false
   hosts: R3
@@ -51,7 +51,7 @@
           - router-id 3.3.3.3
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R4
   connection: network_cli
   gather_facts: false
   hosts: R4
@@ -68,7 +68,7 @@
           - router-id 4.4.4.4
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R5
   connection: network_cli
   gather_facts: false
   hosts: R5
@@ -85,7 +85,7 @@
           - router-id 5.5.5.5
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R6
   connection: network_cli
   gather_facts: false
   hosts: R6
@@ -102,7 +102,7 @@
           - router-id 6.6.6.6
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R7
   connection: network_cli
   gather_facts: false
   hosts: R7
@@ -119,7 +119,7 @@
           - router-id 7.7.7.7
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R8
   connection: network_cli
   gather_facts: false
   hosts: R8
@@ -136,7 +136,7 @@
           - router-id 8.8.8.8
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R9
   connection: network_cli
   gather_facts: false
   hosts: R9
@@ -153,7 +153,7 @@
           - router-id 9.9.9.9
         parents: router ospf 1
 
-- name: Configure Loopback0
+- name: Configure Loopback0 on R10
   connection: network_cli
   gather_facts: false
   hosts: R10

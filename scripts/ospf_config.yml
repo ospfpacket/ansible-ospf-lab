@@ -1,5 +1,5 @@
 ---
-- name: OSPF Config for R1
+- name: OSPF Config for Tunnel 0
   connection: network_cli
   gather_facts: false
   hosts: tunnelrouters
